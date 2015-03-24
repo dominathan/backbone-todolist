@@ -24,7 +24,7 @@ app.AppView = Backbone.View.extend({
 
     this.listenTo(app.Todos, 'change:completed', this.filterOne);
     this.listenTo(app.Todos, 'filter', this.filterAll);
-    this.listenTo(app.Todos,  'all', this.render);
+    this.listenTo(app.Todos, 'all', this.render);
 
     app.Todos.fetch();
   },
@@ -41,10 +41,7 @@ app.AppView = Backbone.View.extend({
         remaining: remaining
       }));
 
-      this.$("#filter li a")
-        .removeClass("selected")
-        .filter('[href="#/' + (app.TodoFilter || '' ) + '"]')
-        .addClass('selected');
+      this.$("#filters li a").removeClass("selected").filter('[href="#/' + (app.TodoFilter || '' ) + '"]').addClass('selected');
     } else {
       this.$main.hide();
       this.$footer.hide();
