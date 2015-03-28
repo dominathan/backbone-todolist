@@ -80,3 +80,5 @@ var port = 4711;
 app.listen( port, function() {
     console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
 });
+
+//static assets are not being found. correct issue
