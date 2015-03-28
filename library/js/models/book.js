@@ -9,7 +9,7 @@ app.Book = Backbone.Model.extend({
     keywords: "None"
   },
 
-  parse: function(response) {
+  parse: function( response ) {
     response.id = response._id;
     return response;
   }

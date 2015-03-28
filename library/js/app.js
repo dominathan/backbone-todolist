@@ -1,5 +1,6 @@
 var app = app || {};
 
 $(function() {
-    new app.LibraryView( books );
+    $('#releaseDate').datepicker();
+    new app.LibraryView();
 });

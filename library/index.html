@@ -4,6 +4,7 @@
      <meta charset="UTF-8"/>
      <title>Backbone.js Library</title>
      <link rel="stylesheet" href="css/screen.css">
+     <link rel="stylesheet" href='css/jquery-ui-min.css'>
   </head>
   <body>
 
@@ -36,13 +37,15 @@
       <ul>
         <li><%= title %></li>
         <li><%= author %></li>
-        <li><%= releaseDate %></li>
-        <li><%= keywords %></li>
+        <li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy') %></li>
+        <li><% _.each( keywords, function( keyobj ) {%> <%= keyobj.keyword%><% } ); %></li>
       </ul>
       <button class="delete">Delete</button>
     </script>
 
     <script src="js/lib/jquery-min.js"></script>
+    <script src="js/lib/jquery-datepicker-min.js"></script>
+    <script src="js/lib/jquery-ui-min.js"></script>
     <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
     <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
     <script src="js/models/book.js"></script>

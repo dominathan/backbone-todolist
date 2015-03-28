@@ -18,11 +18,12 @@ mongoose.connect( 'mongodb://localhost/library_database' );
 var Keywords = new mongoose.Schema({
     keyword: String
 })
+
 var Book = new mongoose.Schema({
     title: String,
     author: String,
     releaseDate: Date,
-    keywords: [Keywords]
+    keywords: [ Keywords ]
 });
 
 //Models
@@ -69,7 +70,7 @@ app.post( '/api/books', function( request, response ) {
         keywords: request.body.keywords
     });
 
-    return book.save( function( err ) {
+    book.save( function( err ) {
         if( !err ) {
             console.log( 'created' );
             return response.send( book );
