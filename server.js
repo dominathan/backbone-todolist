@@ -17,7 +17,7 @@ mongoose.connect( 'mongodb://localhost/library_database' );
 
 var Keywords = new mongoose.Schema({
     keyword: String
-})
+});
 
 var Book = new mongoose.Schema({
     title: String,
